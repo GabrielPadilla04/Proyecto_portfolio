@@ -1,0 +1,73 @@
+/* general */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* secciones con fondo de proyectos y equipo */
+
+.seccion-con-fondo{
+    background-image: url('../img/fondo-proyectos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 80vh;
+}
+
+.seccion-con-fondo-equipo{
+    background-image: url('../img/momo.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 80vh;
+}
+
+/* capa oscura para que mejore la legibilidad */
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* componentes */
+.card {
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco casi opaco */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto de levante al pasar el mouse */
+}
+
+/* Ajuste para el Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Variables para Modo Claro */
+.light-mode {
+    --bg: #ffffff;
+    --bg-alt: #f1f5f9;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+/* Variables para Modo Oscuro */
+.dark-mode {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --nav-bg: rgba(15, 23, 42, 0.8);
+}
