@@ -5,10 +5,13 @@ const body = document.body;
 // 1. FUNCIÓN PARA APLICAR EL MODO
 const applyTheme = (theme) => {
     if (theme === 'dark') {
-        body.classList.replace('light-mode', 'dark-mode');
+        // Usamos add y remove en lugar de replace para evitar errores si la clase no existe aún
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
         if (themeIcon) themeIcon.innerText = '☀️';
     } else {
-        body.classList.replace('dark-mode', 'light-mode');
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
         if (themeIcon) themeIcon.innerText = '🌙';
     }
 };
@@ -20,9 +23,10 @@ applyTheme(savedTheme);
 // 3. AL HACER CLICK: Cambiar y guardar
 if (themeBtn) {
     themeBtn.addEventListener('click', () => {
-        const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+        // Determinamos el nuevo tema basándonos en la clase actual
+        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
 
         applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme); // Aquí se guarda para las otras páginas
+        localStorage.setItem('theme', newTheme);
     });
 }

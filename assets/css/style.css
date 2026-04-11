@@ -1,16 +1,73 @@
-/* general */
+/* --- CONFIGURACIÓN DE VARIABLES --- */
+.light-mode {
+    --bg: #ffffff;
+    --bg-alt: #f1f5f9;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+}
 
+.dark-mode {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+}
+
+/* --- GENERAL --- */
 html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* secciones con fondo de proyectos y equipo */
+/* --- NAVEGACIÓN (Bootstrap Override) --- */
+.custom-navbar {
+    background-color: var(--nav-bg) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
 
-.seccion-con-fondo{
+.custom-navbar .nav-link, 
+.custom-navbar .navbar-brand {
+    color: var(--text) !important;
+}
+
+.custom-navbar .nav-link.active {
+    color: var(--primary) !important;
+    font-weight: bold;
+}
+
+/* --- BOTÓN DE MODO --- */
+.btn-theme {
+    background: transparent;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.btn-theme:hover {
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* --- SECCIONES CON FONDO --- */
+.seccion-con-fondo {
     background-image: url('../img/fondo-proyectos.jpg');
     background-size: cover;
     background-position: center;
@@ -19,15 +76,13 @@ body{
     min-height: 80vh;
 }
 
-.seccion-con-fondo-equipo{
+.seccion-con-fondo-equipo {
     background-image: url('../img/momo.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     min-height: 80vh;
 }
-
-/* capa oscura para que mejore la legibilidad */
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.65);
@@ -37,37 +92,125 @@ body{
     align-items: center;
 }
 
-/* componentes */
+/* --- COMPONENTES (Tarjetas y Texto) --- */
 .card {
-    transition: transform 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.95); /* Blanco casi opaco */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: var(--bg-alt) !important;
+    color: var(--text) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Efecto de levante al pasar el mouse */
+    transform: translateY(-10px);
 }
 
-/* Ajuste para el Footer */
-footer {
+.text-custom-muted {
+    color: var(--text-muted) !important;
+}
+
+/* --- FOOTER --- */
+.custom-footer {
     margin-top: auto;
+    background-color: var(--bg-alt) !important;
+    border-top: 1px solid rgba(128, 128, 128, 0.1);
+    color: var(--text-muted) !important;
 }
 
-/* Variables para Modo Claro */
-.light-mode {
-    --bg: #ffffff;
-    --bg-alt: #f1f5f9;
-    --text: #0f172a;
-    --text-muted: #64748b;
-    --primary: #2563eb;
-    --nav-bg: rgba(255, 255, 255, 0.8);
+.main-content {
+    background-color: var(--bg) !important;
 }
 
-/* Variables para Modo Oscuro */
-.dark-mode {
-    --bg: #0f172a;
-    --bg-alt: #1e293b;
-    --text: #f8fafc;
-    --text-muted: #94a3b8;
-    --primary: #3b82f6;
-    --nav-bg: rgba(15, 23, 42, 0.8);
+/* Tarjeta presentacion equipo */
+
+a.text-decoration-none .card {
+    cursor: pointer;
+}
+
+a.text-decoration-none:hover .card {
+    border-color: var(--primary) !important;
+    background-color: var(--bg) !important;
+}
+
+/* --- ESTILOS DE PERFIL Y REDES --- */
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50% !important;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+.badge-dev {
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    background: var(--primary);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 3px solid var(--bg);
+}
+
+.project-card {
+    border-radius: 20px !important;
+    transition: all 0.3s ease;
+    background-color: var(--bg-alt) !important;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--primary) !important;
+}
+
+/* Redes Sociales Colores */
+.social-link {
+    color: var(--text-muted);
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+.github:hover { color: #f0f6fc !important; }
+.linkedin:hover { color: #0a66c2 !important; }
+.instagram:hover { color: #c32aa3 !important; }
+.terminal:hover { color: #4af626 !important; }
+
+.bg-alt {
+    background-color: var(--bg-alt) !important;
+}
+
+/* --- BOTÓN DE DESCARGA CV --- */
+.cv-container {
+    border: 2px dashed var(--primary);
+    transition: all 0.3s ease;
+}
+
+.cv-container:hover {
+    border-style: solid;
+    transform: translateY(-5px);
+}
+
+.btn-primary.btn-lg {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+}
+
+.btn-primary.btn-lg:hover {
+    box-shadow: 0 0 20px var(--primary) !important;
+    transform: scale(1.05);
 }

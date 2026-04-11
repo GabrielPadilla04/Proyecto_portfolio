@@ -7,12 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="light-mode d-flex flex-column min-vh-100">
 
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <nav class="navbar navbar-expand-lg shadow custom-navbar">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">Portfolio</a>
+                <a class="navbar-brand fw-bold" href="index.html">DevTeam</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
@@ -21,10 +21,13 @@
                     </ul>
                 </div>
             </div>
+            <button id="theme-toggle" class="btn-theme mx-3">
+                <span id="theme-icon">🌙</span>
+            </button>
         </nav>
     </header>
 
-    <main class="seccion-con-fondo">
+    <main class="seccion-con-fondo flex-grow-1">
         <div class="overlay py-5">
             <div class="container mt-5">
                 <h2 class="text-center text-white display-4 mb-5">Nuestros Proyectos</h2>
@@ -32,16 +35,13 @@
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="card h-100 shadow border-0">
-                            <img src="assets/img/proyecto-tienda.jpg" class="card-img-top" alt="Captura del Sistema de Tienda" style="height: 250px; object-fit: cover;">
+                            <img src="assets/img/proyecto-tienda.jpg" class="card-img-top" alt="Tienda" style="height: 250px; object-fit: cover;">
                             <div class="card-body">
-                                <h3 class="card-title h4 text-primary">Sistema de Gestión de Tienda</h3>
-                                <p class="card-text text-dark">
-                                    Aplicación que diseñamos para administrar una tienda. Incluye gestión de inventario, ventas y reportes.
-                                </p>
-                                <div class="mb-3">
+                                <h3 class="card-title h4 text-info">Sistema de Gestión de Tienda</h3>
+                                <p class="card-text">Aplicación diseñada para administrar inventario, ventas y reportes en .NET.</p>
+                                <div class="mt-3">
                                     <span class="badge bg-secondary">Blazor</span>
                                     <span class="badge bg-secondary">.NET</span>
-                                    <span class="badge bg-secondary">EF Core</span>
                                 </div>
                             </div>
                         </div>
@@ -49,15 +49,12 @@
 
                     <div class="col-md-6">
                         <div class="card h-100 shadow border-0">
-                            <img src="assets/img/proyecto-dados.jpg" class="card-img-top" alt="Captura del Juego de Dados" style="height: 250px; object-fit: cover;">
+                            <img src="assets/img/proyecto dados.jpeg" class="card-img-top" alt="Dados" style="height: 250px; object-fit: cover;">
                             <div class="card-body">
-                                <h3 class="card-title h4 text-success">Batalla de Dados HTML</h3>
-                                <p class="card-text text-dark">
-                                    Un juego para dos jugadores que consiste en conseguir el mayor puntaje posible.
-                                </p>
-                                <div class="mb-3">
+                                <h3 class="card-title h4 text-info">Batalla de Dados HTML</h3>
+                                <p class="card-text">Un juego competitivo para dos jugadores con lógica en JavaScript.</p>
+                                <div class="mt-3">
                                     <span class="badge bg-secondary">HTML5</span>
-                                    <span class="badge bg-secondary">CSS</span>
                                     <span class="badge bg-secondary">JavaScript</span>
                                 </div>
                             </div>
@@ -65,23 +62,23 @@
                     </div>
                     
                     <div class="col-md-12">
-                        <div class="card shadow border-0 bg-dark text-white text-center p-4">
+                        <div class="card shadow border-0 text-center p-4">
                             <div class="card-body">
                                 <h4 class="h5">¿Quieres ver más?</h4>
-                                <p>Podes ver mis repositorios en GitHub para ver el código fuente detallado!</p>
+                                <p>Puedes ver mis repositorios en GitHub para ver el código fuente detallado.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="custom-footer text-center py-4">
         <p class="mb-0 small">© 2026 - Gabriel Padilla y Valentin Montes</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
